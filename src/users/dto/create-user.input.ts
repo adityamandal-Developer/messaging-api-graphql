@@ -8,7 +8,7 @@ export class CreateUserInput {
   email: string;
 
   @Field()
-  @IsStrongPassword()
+  // @IsStrongPassword()
   password: string;
 
   @Field({ nullable: true })

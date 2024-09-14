@@ -24,8 +24,8 @@ export class AuthService {
     const token = this.jwtService.sign(tokenPayload);
     response.cookie('Authentication', token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
-      sameSite: 'none', // Ensure cross-site cookie is allowed
+      sameSite: 'none',
+      secure: true,
       expires,
     });
   }

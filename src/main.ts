@@ -15,8 +15,8 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors({
     origin: origins,
-    // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    // allowedHeaders: 'Content-Type, Accept, Authorization, Cookie',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type, Accept, Authorization, Cookie',
     credentials: true,
   });
   app.useLogger(app.get(Logger));
