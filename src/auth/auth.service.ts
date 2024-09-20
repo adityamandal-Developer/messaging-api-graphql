@@ -30,11 +30,11 @@ export class AuthService {
     });
   }
   verifyWs(request: Request): TokenPayload {
-    const cookie: string[] = request.headers.cookie.split('; ');
-    const authenticationCookie = cookie.find((cookie) =>
+    const cookies: string[] = request.headers.cookie.split('; ');
+    const authCookie = cookies.find((cookie) =>
       cookie.includes('Authentication'),
     );
-    const jwt = authenticationCookie.split('Authentication')[1];
+    const jwt = authCookie.split('Authentication=')[1];
     return this.jwtService.verify(jwt);
   }
 }

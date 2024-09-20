@@ -32,9 +32,12 @@ import { AuthService } from './auth/auth.service';
               console.log('Connected!');
               try {
                 const request: Request = context.extra.request;
+                // console.log('request', request, 'request end');
                 const user = authService.verifyWs(request);
                 context.user = user;
+                // console.log('user', user);
               } catch (error) {
+                // console.log('no COOKIE');
                 new Logger().error(error);
                 throw new Error('Unauthorized');
               }

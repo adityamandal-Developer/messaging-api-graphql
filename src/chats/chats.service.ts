@@ -16,6 +16,7 @@ export class ChatsService {
             $in: [userId],
           },
         },
+        { isPrivate: false },
       ],
     };
   }
