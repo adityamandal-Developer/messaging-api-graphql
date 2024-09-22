@@ -10,8 +10,8 @@ export class User extends AbstractEntity {
   email: string;
 
   @Prop()
-  @Field({ nullable: true })
-  name: string;
+  @Field()
+  username: string;
 
   @Prop()
   password: string;
